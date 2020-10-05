@@ -1,8 +1,9 @@
 import {Configuration} from 'webpack';
+import {Configuration as DevServerConfig} from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
-const config: Configuration = {
+const config: Configuration & DevServerConfig = {
   mode: "development",
   entry: './src/entry.ts',
   output: {
@@ -29,7 +30,10 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }) as any
-  ]
+  ],
+  devServer: {
+    host: '0.0.0.0'
+  }
 }
 
 export default config;
