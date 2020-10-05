@@ -1,4 +1,9 @@
-import $ from 'jquery'
-import './index.css';
+import {typedPath} from 'typed-path';
 
-$('#main').text('Hello, webpack!');
+type State = {
+  aaa?: {
+    bbb? : string
+  }
+}
+
+const path = typedPath<State>().aaa?.bbb?.$path;
