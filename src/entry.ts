@@ -1,5 +1,7 @@
-import {typedPath} from 'typed-path';
+// should put this in the first line
 import 'core-js';
+
+import {typedPath} from 'typed-path';
 
 type State = {
   aaa?: {
